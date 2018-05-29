@@ -235,12 +235,13 @@ $ref_year = $time.year
       puts "#{current_month}"
       puts "-" * current_month.length
       puts " "
-      @total = 0.0
+      @total = 0.00
       $payee_list.each do |payee, amount|
         puts "#{payee}: #{amount}"
         @total += $payee_list["#{payee}"]
       end
       puts " "
+      @total = @total.round(2)
       puts "TOTAL: #{@total}"
     end
   end
@@ -275,13 +276,14 @@ $ref_year = $time.year
             else
               #printing the amount for each payee, and the total for the required month
               puts " "
-              @total_per_month = 0.00
+              @total_in_month = 0.00
               $monthly_payments["#{required_month}"].each do |payee, amount|
                 puts "#{payee}: #{amount}"
-                @total_per_month += amount
+                @total_in_month += amount
               end
               puts " "
-              puts "TOTAL PAYED: #{@total_per_month}"
+              @total_in_month = @total_in_month.round(2)
+              puts "TOTAL PAYED: #{@total_in_month}"
             end
           else
             next
@@ -320,6 +322,7 @@ $ref_year = $time.year
               @monthly_total += amount
             end
             puts " "
+            @monthly_total = @monthly_total.round(2)
             puts "TOTAL PAYED: #{@monthly_total}"
             puts " "
             puts " "
@@ -719,7 +722,7 @@ $ref_year = $time.year
     puts "THANK YOU FOR USING 'ELECTRONIC EXPENSES TRACKER'"
     puts "=" * 52
     puts "-"* 34
-    puts "| Asiel Montes : v1.0 : 04-23-18 |"
+    puts "| Asiel Montes : v1.1 : 05-29-18 |"
     puts "-" * 34
     puts "=" * 52
     puts "/|\\    /|\\    " * 4
