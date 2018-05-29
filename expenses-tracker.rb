@@ -360,6 +360,7 @@ $ref_year = $time.year
       year_total += amount
     end
     puts " "
+    year_total = year_total.round(2)
     puts "YEAR TOTAL: #{year_total}"
   end
 
@@ -722,7 +723,7 @@ $ref_year = $time.year
     puts "THANK YOU FOR USING 'ELECTRONIC EXPENSES TRACKER'"
     puts "=" * 52
     puts "-"* 34
-    puts "| Asiel Montes : v1.1 : 05-29-18 |"
+    puts "| Asiel Montes : v1.2 : 05-29-18 |"
     puts "-" * 34
     puts "=" * 52
     puts "/|\\    /|\\    " * 4
